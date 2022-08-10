@@ -72,13 +72,15 @@ form button {
   margin: 0 auto;
   display: block;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.1s;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 }
 form button:hover {
   background-color: var(--blue-clr-hvr);
 }
 form button:active {
-  margin-top: 3px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.07);
+  margin-top: 2px;
 }
 
 /* disable scroll */
