@@ -23,7 +23,7 @@ function kalkulasi(userAnswer, numberInput) {
   const [angka1, angka2] = randomDuaAngka();
   const [jawaban, operasi] = kalkulasiDuaAngka(angka1, angka2);
 
-  // add to hash table
+  // add to array
   storeJawaban.unshift(jawaban);
 
   // ambil jawaban sebelumnya
