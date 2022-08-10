@@ -21,6 +21,7 @@ body {
 main {
   width: 95%;
   max-width: 25rem;
+  min-height: 22rem;
   background-color: var(--main-clr);
   border-radius: 2rem;
   margin: 2rem auto;
@@ -71,10 +72,13 @@ form button {
   margin: 0 auto;
   display: block;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 }
 form button:hover {
   background-color: var(--blue-clr-hvr);
+}
+form button:active {
+  margin-top: 3px;
 }
 
 /* disable scroll */
