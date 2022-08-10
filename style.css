@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+:root {
+  --body-clr: #131022;
+  --white: #fff;
+  --main-clr: #b9edbe;
+  --text-clr: #3e3e3e;
+  --blue-clr: #0066ff;
+  --blue-clr-hvr: #005be4;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Concert One', cursive;
+}
+
+body {
+  background-color: var(--body-clr);
+}
+
+main {
+  width: 95%;
+  max-width: 30rem;
+  min-height: 19rem;
+  background-color: var(--main-clr);
+  border-radius: 2rem;
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+.score {
+  font-size: 1.5rem;
+  color: var(--text-clr);
+}
+
+.question {
+  color: var(--text-clr);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1em;
+}
+
+form input {
+  padding: 1rem 3rem;
+  margin: 1rem auto;
+  width: 100%;
+  font-size: 2rem;
+  color: var(--text-clr);
+  border: none;
+  border-radius: 5rem;
+  outline: none;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+}
+
+form input::placeholder {
+  color: #a5a5a5;
+}
+
+form input:focus {
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+form button {
+  padding: 1rem 1.7rem;
+  font-size: 1.5rem;
+  border-radius: 5rem;
+  border: none;
+  background-color: var(--blue-clr);
+  color: var(--white);
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+form button:hover {
+  background-color: var(--blue-clr-hvr);
+}
+
+/* disable scroll */
+/* Chrome, Safari, Edge, Opera */
+form input::-webkit-outer-spin-button,
+form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+form input[type='number'] {
+  -moz-appearance: textfield;
+}
