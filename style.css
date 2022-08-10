@@ -37,11 +37,11 @@ main {
   color: var(--text-clr);
   font-size: 2rem;
   text-align: center;
-  margin-top: 1em;
+  margin-top: 0.2em;
 }
 
 form input {
-  padding: 1rem 3rem;
+  padding: 0.5em 1em;
   margin: 1rem auto;
   width: 100%;
   font-size: 2rem;
@@ -55,6 +55,7 @@ form input {
 
 form input::placeholder {
   color: #a5a5a5;
+  font-size: 1em;
 }
 
 form input:focus {
@@ -62,7 +63,7 @@ form input:focus {
 }
 
 form button {
-  padding: 1rem 1.7rem;
+  padding: 0.5em 1em;
   font-size: 1.5rem;
   border-radius: 5rem;
   border: none;
