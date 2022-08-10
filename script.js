@@ -1,12 +1,9 @@
-const formQuestion = document.querySelector('form');
-
 window.addEventListener('load', () => {
+  const formQuestion = document.querySelector('form');
   formQuestion.addEventListener('submit', e => {
     e.preventDefault();
-
     const numberInput = e.target.elements[0];
     const userAnswer = e.target.elements[0].value;
-
     // if no value, do nothing
     if (userAnswer === '') {
       return;
@@ -24,10 +21,11 @@ let skor = 0;
 
 function kalkulasi(userAnswer, numberInput) {
   const [angka1, angka2] = randomDuaAngka();
-  const jawaban = kalikanDuaAngka(angka1, angka2);
+  const [jawaban, operasi] = kalkulasiDuaAngka(angka1, angka2);
 
+  // add to hash table
   storeJawaban.unshift(jawaban);
-  // console.log(storeJawaban);
+
   // ambil jawaban sebelumnya
   const currentJawaban = storeJawaban[1];
 
@@ -35,7 +33,9 @@ function kalkulasi(userAnswer, numberInput) {
   if (+userAnswer === currentJawaban) {
     skor++;
   }
-  displayDOM(angka1, angka2, skor);
+
+  // print ke layar
+  displayDOM(angka1, operasi, angka2, skor);
 
   // add focus
   numberInput.focus();
@@ -43,24 +43,41 @@ function kalkulasi(userAnswer, numberInput) {
 
 // random value ke1 dan value ke2
 const randomDuaAngka = () => {
-  const angka1 = Math.floor(Math.random() * 20);
-  const angka2 = Math.floor(Math.random() * 15);
+  const angka1 = Math.floor(Math.random() * 25); // change value for the level
+  const angka2 = Math.floor(Math.random() * 13); // change value for the level
   return [angka1, angka2];
 };
 
-// kalikan
-const kalikanDuaAngka = (angka1, angka2) => {
-  const hasilKali = angka1 * angka2;
-  return hasilKali;
+// kalkulasikan
+const kalkulasiDuaAngka = (angka1, angka2) => {
+  let hasil = 0;
+  let operasi = '';
+  const kondisi = Math.random();
+
+  if (kondisi < 0.334) {
+    hasil = angka1 + angka2;
+    operasi = 'ditambah';
+  } else if (kondisi > 0.667) {
+    hasil = angka1 * angka2;
+    operasi = 'dikali';
+  } else {
+    hasil = angka1 - angka2;
+    operasi = 'dikurang';
+  }
+
+  return [hasil, operasi];
 };
 
 // tampilkan ke dom
-const displayDOM = (angka1, angka2, skor) => {
+const displayDOM = (angka1, operasi, angka2, skor) => {
+  const displayQuestion = document.querySelector('.question');
   const displaySkor = document.querySelector('#score');
-  const angkaKe1 = document.querySelector('#nilai-awal');
-  const angkaKe2 = document.querySelector('#nilai-akhir');
+
+  const question = `<span>
+                      berapa hasil <br>
+                      ${angka1} ${operasi} ${angka2}?
+                    </span>`;
 
   displaySkor.textContent = skor;
-  angkaKe1.textContent = angka1;
-  angkaKe2.textContent = angka2;
+  displayQuestion.innerHTML = question;
 };

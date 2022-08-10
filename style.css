@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
-
 :root {
   --body-clr: #131022;
   --white: #fff;
   --main-clr: #b9edbe;
-  --text-clr: #3e3e3e;
-  --blue-clr: #0066ff;
-  --blue-clr-hvr: #005be4;
+  --text-clr: #325051;
+  --blue-clr: #005fed;
+  --blue-clr-hvr: #1e78ff;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Concert One', cursive;
+  font-family: 'Dangrek', cursive;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 body {
@@ -20,11 +20,10 @@ body {
 
 main {
   width: 95%;
-  max-width: 30rem;
-  min-height: 19rem;
+  max-width: 25rem;
   background-color: var(--main-clr);
   border-radius: 2rem;
-  margin: 4rem auto;
+  margin: 2rem auto;
   padding: 2rem;
 }
 
@@ -36,12 +35,12 @@ main {
 .question {
   color: var(--text-clr);
   font-size: 2rem;
+  line-height: 1.2em;
   text-align: center;
-  margin-top: 0.2em;
 }
 
 form input {
-  padding: 0.5em 1em;
+  padding: 0.5rem 2.5rem;
   margin: 1rem auto;
   width: 100%;
   font-size: 2rem;
@@ -55,7 +54,7 @@ form input {
 
 form input::placeholder {
   color: #a5a5a5;
-  font-size: 1em;
+  font-size: 0.7em;
 }
 
 form input:focus {
@@ -63,8 +62,8 @@ form input:focus {
 }
 
 form button {
-  padding: 0.5em 1em;
-  font-size: 1.5rem;
+  padding: 0.5em 1em 0.3em;
+  font-size: 1.3rem;
   border-radius: 5rem;
   border: none;
   background-color: var(--blue-clr);
